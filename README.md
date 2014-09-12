@@ -1,6 +1,8 @@
 Cross Platform Cookbook
 =======================
 
+[![Build Status](https://travis-ci.org/sinfomicien/mysql2_chef_gem.png)](https://travis-ci.org/sinfomicien/mysql2_chef_gem)
+
 Making custom Chef resource cross platform.
 
 Scope
