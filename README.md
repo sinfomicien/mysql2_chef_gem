@@ -15,7 +15,6 @@ Requirements
 #### cookbook::recipe
 - `mysql::client` - this recipe is needed if you want to link the mysql2 gem to a mysql client library
 - `mariadb::client` - this recipe is needed if you want to link the mysql2 gem to a mariadb client library
-- `centos` - not fully tested on centos, but should work
 
 Resources / Providers
 ---------------------
