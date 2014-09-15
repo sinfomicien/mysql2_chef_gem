@@ -10,12 +10,18 @@ def whyrun_supported?
 end
 
 action :install do
-  include_recipe 'build-essential::default'
+  recipe_eval do
+    run_context.include_recipe 'build-essential::default'
+  end
   case new_resource.type
   when 'mariadb'
-    include_recipe 'mariadb::client'
+    recipe_eval do
+      run_context.include_recipe 'mariadb::client'
+    end
   else
-    include_recipe 'mysql::client'
+    recipe_eval do
+      run_context.include_recipe 'mysql::client'
+    end
   end
 
   chef_gem 'mysql2' do
