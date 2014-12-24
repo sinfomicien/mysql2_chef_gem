@@ -6,25 +6,94 @@ provisioner:
 
 platforms:
   - name: centos-5.10
-  - name: fedora-5.10
-  - name: omnios-151006
-  - name: ubuntu-10.04
+  - name: centos-6.5
+  - name: fedora-20
   - name: ubuntu-12.04
-  - name: ubuntu-13.10
-  - name: windows-2008R2
+  - name: ubuntu-14.10
 
 suites:
   #
-  # mysql_chef_gem
+  # mysql2_chef_gem
   #
-  - name: mysql2_chef_gem
+  - name: client50-mysql
     run_list:
-    - recipe[mysql2_chef_gem::default]
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+       client_version: '5.0'
+       provider: 'mysql'
     includes: [
-      'centos-5.8',
-      'centos-6.4',
-      'amazon-2013.09',
-      'amazon-2014.03',
-      'fedora-19',
-      'debian-7.2',
+      'centos-5.10'
+    ]
+
+  - name: client51-mysql
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+       client_version: '5.1'
+       provider: 'mysql'
+    includes: [
+      'centos-6.5',
+      'ubuntu-10.04'
+    ]
+
+  - name: client55-mysql
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+       client_version: '5.5'
+       provider: 'mysql'
+    includes: [
+      'centos-6.5',
+      'debian-7.0',
+      'ubuntu-12.04',
+      'ubuntu-14.04'
+    ]
+
+  - name: client56-mysql
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+       client_version: '5.6'
+       provider: 'mysql'
+    includes: [
+      'centos-5.10',
+      'centos-6.5',
+      'centos-7.0',
+      'ubuntu-14.04'
+    ]
+
+  - name: client57-mysql
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+       client_version: '5.7'
+       provider: 'mysql'
+    includes: [
+      'centos-5.10',
+      'centos-6.5',
+      'centos-7.0'
+    ]
+
+## MariaDB
+  - name: client55-mariadb
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+        provider: 'mariadb'
+      mariadb:
+       install:
+        version: '5.5'
+    includes: [
+      #'debian-7.0',
+      #'centos-6.5',
+      #'centos-7.0',
+      'fedora-20',
+      #'ubuntu-12.04',
+      'ubuntu-14.04'
     ]

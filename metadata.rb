@@ -13,7 +13,6 @@ supports 'scientific'
 supports 'fedora'
 supports 'debian'
 supports 'ubuntu'
-supports 'smartos'
 
 depends 'build-essential'
 depends 'mysql'
