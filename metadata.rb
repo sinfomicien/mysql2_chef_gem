@@ -4,7 +4,7 @@ maintainer_email 'sinfomicien@gmail.com'
 license 'Apache 2.0'
 description 'Provides the mysql2_chef_gem resource'
 
-version '0.1.1'
+version '1.0.0'
 
 supports 'amazon'
 supports 'redhat'

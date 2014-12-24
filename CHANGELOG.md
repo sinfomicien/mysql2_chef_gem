@@ -1,6 +1,12 @@
-crossplat CHANGELOG
+mysql2_chef_gem CHANGELOG
 ========================
-This file is used to list changes made in each version of the crossplat cookbook.
+
+1.0.0 (2014-12-23)
+------------------
+- Replacing recipes with resources
+- Mysql and MariaDB providers for linking mysql2 gem
+- Expanded platform test coverage
+
 0.1.1 (2014-09-15)
 ------------------
 - Correct a typo in documentation
