@@ -2,17 +2,12 @@ source 'https://rubygems.org'
 
 group :lint do
   gem 'foodcritic', '~> 3.0'
-  gem 'rubocop', '~> 0.18'
-  gem 'rainbow', '< 2.0'
-end
-
-group :packaging do
-  gem 'stove'
+  gem 'rubocop',    '= 0.26.1'
 end
 
 group :unit do
-  gem 'berkshelf'
-  gem 'chefspec',   '~> 3.4'
+  gem 'berkshelf',  '~> 3.1'
+  gem 'chefspec',   '~> 4.0'
 end
 
 group :kitchen_common do
@@ -20,14 +15,14 @@ group :kitchen_common do
 end
 
 group :kitchen_vagrant do
-  gem 'kitchen-vagrant', '~> 0.11'
+  gem 'kitchen-vagrant', '~> 0.15'
 end
 
 group :kitchen_cloud do
-  gem 'kitchen-digitalocean'
-  gem 'kitchen-ec2'
-  gem 'kitchen-joyent'
-  gem 'kitchen-gce'
+  gem 'kitchen-digitalocean', '~> 0.8'
+  gem 'kitchen-ec2',          '~> 0.8'
+  gem 'kitchen-joyent',       '~> 0.1'
+  gem 'kitchen-gce',          '~> 0.2'
 end
 
 group :development do
@@ -40,7 +35,4 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-rubocop'
   gem 'rake'
-  gem 'fauxhai'
-  gem 'pry-nav'
-  gem 'nyan-cat-formatter'
 end
