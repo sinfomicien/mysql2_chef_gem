@@ -2,6 +2,7 @@ class Chef
   class Provider
     class Mysql2ChefGem
       class Mysql < Chef::Provider::LWRPBase
+        include Chef::DSL::IncludeRecipe
         use_inline_resources if defined?(use_inline_resources)
 
         def whyrun_supported?
@@ -9,9 +10,7 @@ class Chef
         end
 
         action :install do
-          recipe_eval do
-            run_context.include_recipe 'build-essential::default'
-          end
+          include_recipe 'build-essential::default'
 
           # As a resource: can pass version from calling recipe
           mysql_client 'default' do
