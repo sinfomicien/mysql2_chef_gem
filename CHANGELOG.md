@@ -1,6 +1,10 @@
 mysql2_chef_gem CHANGELOG
 ========================
 
+1.0.1 (2014-12-25)
+------------------
+- Moving from recipe_eval in to include_recipe LWRP
+
 1.0.0 (2014-12-23)
 ------------------
 - Replacing recipes with resources
