@@ -104,5 +104,5 @@ end
 
 Authors
 -------
-- Author:: Sean OMeara (<someara@opscode.com>)
+- Author:: Sean OMeara (<someara@chef.io>)
 - Author:: Nicolas Blanc(<sinfomicien@gmail.com>)
