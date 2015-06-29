@@ -1,6 +1,10 @@
 mysql2_chef_gem CHANGELOG
 ========================
 
+1.0.2 (2015-06-29)
+------------------
+- Updating metadata to depend on mysql ~> 6.0
+
 1.0.1 (2014-12-25)
 ------------------
 - Moving from recipe_eval in to include_recipe LWRP
