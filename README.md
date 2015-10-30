@@ -1,7 +1,8 @@
 Mysql2 Chef Gem Installer Cookbook
 ==================================
 
-[![Build Status](https://travis-ci.org/sinfomicien/mysql2_chef_gem.png)](https://travis-ci.org/sinfomicien/mysql2_chef_gem)
+[![Build Status](https://travis-ci.org/sinfomicien/mysql2_chef_gem.svg)](https://travis-ci.org/sinfomicien/mysql2_chef_gem)
+[![Cookbook Version](http://img.shields.io/cookbook/v/mysql2_chef_gem.svg)](https://supermarket.chef.io/cookbooks/mysql2_chef_gem)
 
 mysql2_chef_gem is a library cookbook that provides an LWRP for use
 in recipes. It provides a wrapper around `chef_gem` called
@@ -102,7 +103,22 @@ mysql2_chef_gem 'default' do
 end
 ```
 
-Authors
--------
+
+License & Authors
+-----------------
 - Author:: Sean OMeara (<someara@chef.io>)
 - Author:: Nicolas Blanc(<sinfomicien@gmail.com>)
+
+```
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
