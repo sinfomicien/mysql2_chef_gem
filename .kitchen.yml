@@ -5,11 +5,17 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: centos-5.10
-  - name: centos-6.5
-  - name: fedora-20
+  - name: centos-5.11
+  - name: centos-6.7
+  - name: centos-7.1
+  - name: debian-7.8
+    run_list: apt::default
+  - name: debian-8.1
+    run_list: apt::default
+  - name: fedora-21
+  - name: fedora-22
   - name: ubuntu-12.04
-  - name: ubuntu-14.10
+  - name: ubuntu-14.04
 
 suites:
   #
@@ -23,7 +29,7 @@ suites:
        client_version: '5.0'
        provider: 'mysql'
     includes: [
-      'centos-5.10'
+      'centos-5.11'
     ]
 
   - name: client51-mysql
@@ -34,8 +40,7 @@ suites:
        client_version: '5.1'
        provider: 'mysql'
     includes: [
-      'centos-6.5',
-      'ubuntu-10.04'
+      'centos-6.7',
     ]
 
   - name: client55-mysql
@@ -46,8 +51,8 @@ suites:
        client_version: '5.5'
        provider: 'mysql'
     includes: [
-      'centos-6.5',
-      'debian-7.0',
+      'centos-6.7',
+      'debian-7.8',
       'ubuntu-12.04',
       'ubuntu-14.04'
     ]
@@ -60,9 +65,9 @@ suites:
        client_version: '5.6'
        provider: 'mysql'
     includes: [
-      'centos-5.10',
-      'centos-6.5',
-      'centos-7.0',
+      'centos-5.11',
+      'centos-6.7',
+      'centos-7.1',
       'ubuntu-14.04'
     ]
 
@@ -74,9 +79,9 @@ suites:
        client_version: '5.7'
        provider: 'mysql'
     includes: [
-      'centos-5.10',
-      'centos-6.5',
-      'centos-7.0'
+      'centos-5.11',
+      'centos-6.7',
+      'centos-7.1'
     ]
 
 ## MariaDB
@@ -90,10 +95,11 @@ suites:
        install:
         version: '5.5'
     includes: [
-      #'debian-7.0',
-      #'centos-6.5',
-      #'centos-7.0',
-      'fedora-20',
+      #'debian-7.8',
+      #'centos-6.7',
+      #'centos-7.1',
+       'fedora-21',
+       'fedora-22',
       #'ubuntu-12.04',
       'ubuntu-14.04'
     ]
