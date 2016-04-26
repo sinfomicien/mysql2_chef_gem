@@ -14,5 +14,5 @@ supports 'debian'
 supports 'ubuntu'
 
 depends 'build-essential'
-depends 'mysql', '~> 6.0'
+depends 'mysql', '>= 6.0'
 depends 'mariadb'
