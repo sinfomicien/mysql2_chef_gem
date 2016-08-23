@@ -46,3 +46,7 @@ vendor/
 .vagrant/
 .vagrant.d/
 .kitchen/
+
+#eclipse stuff
+.buildpath
+.project
