@@ -22,6 +22,15 @@ env:
   - INSTANCE=client57-mysql-centos-6
   - INSTANCE=client57-mysql-centos-7
   - INSTANCE=client55-mariadb-ubuntu-1404
+  - INSTANCE=client55-percona-ubuntu-1404
+  - INSTANCE=client56-percona-ubuntu-1404
+  - INSTANCE=client57-percona-ubuntu-1404
+  - INSTANCE=client55-percona-centos-6
+  - INSTANCE=client56-percona-centos-6
+  - INSTANCE=client57-percona-centos-6
+  - INSTANCE=client55-percona-centos-7
+  - INSTANCE=client56-percona-centos-7
+  - INSTANCE=client57-percona-centos-7
 
 
 # Don't `bundle install`

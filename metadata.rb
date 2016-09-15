@@ -18,6 +18,7 @@ supports 'oracle'
 depends 'build-essential'
 depends 'mysql', '>= 6.0'
 depends 'mariadb'
+depends 'percona'
 
 source_url 'https://github.com/sinfomicien/mysql2_chef_gem' if respond_to?(:source_url)
 issues_url 'https://github.com/sinfomicien/mysql2_chef_gem/issues' if respond_to?(:issues_url)
