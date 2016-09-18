@@ -119,3 +119,44 @@ suites:
     includes: [
       'ubuntu-14.04'
     ]
+
+## Percona
+  - name: client55-percona
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+        provider: 'percona'
+      percona:
+        version: '5.5'
+    includes: [
+       'centos-6',
+       'centos-7',
+       'ubuntu-14.04'
+    ]
+  - name: client56-percona
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+        provider: 'percona'
+      percona:
+        version: '5.6'
+    includes: [
+       'centos-6',
+       'centos-7',
+       'ubuntu-14.04'
+    ]
+  - name: client57-percona
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+        provider: 'percona'
+      percona:
+        version: '5.7'
+    includes: [
+       'centos-6',
+       'centos-7',
+       'ubuntu-14.04'
+    ]
