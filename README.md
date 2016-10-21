@@ -85,7 +85,9 @@ end
 - `gem_version` - The version of the `mysql` Rubygem to install into
   the Chef environment. Defaults to '0.3.17'
   connector libraries
-- `client_version` - The version of the mysql client libraries to
+- `client_version` - The major version of the mysql client libraries to
+  install and link against
+- `client_package_version` - The package version of the mysql client libraries to
   install and link against
 
 #### Actions

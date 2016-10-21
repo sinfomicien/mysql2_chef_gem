@@ -106,6 +106,17 @@ suites:
       'centos-7'
     ]
 
+  - name: client5.7.16-1-mysql
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+       client_package_version: '5.7.16-1.el7'
+       provider: 'mysql'
+    includes: [
+      'centos-7'
+    ]
+
 ## MariaDB
   - name: client55-mariadb
     run_list:
