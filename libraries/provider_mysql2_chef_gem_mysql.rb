@@ -12,9 +12,15 @@ class Chef
         action :install do
           include_recipe 'build-essential::default'
 
+          package 'mysql-community-devel' do
+            version new_resource.client_package_version
+            action :install
+          end
+
           # As a resource: can pass version from calling recipe
           mysql_client 'default' do
             version new_resource.client_version
+            package_version new_resource.client_package_version
             action :create
           end
 

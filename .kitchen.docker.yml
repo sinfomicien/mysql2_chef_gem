@@ -27,6 +27,7 @@ suites:
     attributes:
       mysql2_chef_gem:
        client_version: '5.7'
+       client_package_version: '5.7.16-1.el7'
        provider: 'mysql'
     includes: [
       'centos-7'
