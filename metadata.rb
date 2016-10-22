@@ -16,6 +16,7 @@ supports 'ubuntu'
 supports 'oracle'
 
 depends 'build-essential'
+depends 'yum-mysql-community'
 depends 'mysql', '>= 6.0'
 depends 'mariadb'
 
