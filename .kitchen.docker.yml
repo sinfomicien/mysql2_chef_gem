@@ -22,6 +22,7 @@ suites:
 
   - name: client57-mysql
     run_list:
+    - recipe[yum-mysql-community::mysql57]
     - recipe[mysql2_chef_gem_test::default]
     attributes:
       mysql2_chef_gem:
