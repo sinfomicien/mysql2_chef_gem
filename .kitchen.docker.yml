@@ -26,7 +26,6 @@ suites:
     - recipe[mysql2_chef_gem_test::default]
     attributes:
       mysql2_chef_gem:
-       client_version: '5.7'
        client_package_version: '5.7.16-1.el7'
        provider: 'mysql'
     includes: [
