@@ -69,7 +69,7 @@ The `mysql2_chef_gem` resource the build dependencies and installation of the `m
 
 ```ruby
 mysql2_chef_gem 'default' do
-  gem_version '0.3.17'
+  gem_version '0.4.5'
   action :install
 end
 ```
@@ -97,7 +97,7 @@ end
 
 ## License & Authors
 
-- Author:: Sean OMeara ([someara@chef.io](mailto:someara@chef.io))
+- Author:: Sean OMeara ([someara@sean.io](mailto:someara@sean.io))
 - Author:: Nicolas Blanc([sinfomicien@gmail.com](mailto:sinfomicien@gmail.com))
 
 ```
