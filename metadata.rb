@@ -16,9 +16,9 @@ supports 'ubuntu'
 supports 'oracle'
 
 depends 'build-essential'
-depends 'mysql', '>= 6.0'
+depends 'mysql', '>= 8.2'
 depends 'mariadb'
 
-source_url 'https://github.com/sinfomicien/mysql2_chef_gem' if respond_to?(:source_url)
-issues_url 'https://github.com/sinfomicien/mysql2_chef_gem/issues' if respond_to?(:issues_url)
-chef_version '>= 11' if respond_to?(:chef_version)
+source_url 'https://github.com/sinfomicien/mysql2_chef_gem'
+issues_url 'https://github.com/sinfomicien/mysql2_chef_gem/issues'
+chef_version '>= 12.1' if respond_to?(:chef_version)
