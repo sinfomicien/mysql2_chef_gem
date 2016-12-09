@@ -16,7 +16,7 @@ class Chef
           mysql_client 'default' do
             package_version new_resource.package_version
             version new_resource.client_version
-            action :install
+            action :create
           end
 
           gem_package 'mysql2' do
