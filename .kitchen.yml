@@ -6,18 +6,17 @@ provisioner:
 
 platforms:
   - name: centos-5.11
-  - name: centos-6.7
+  - name: centos-6.8
   - name: centos-7.2
-  - name: debian-7.9
-    run_list: apt::default
-  - name: debian-8.3
-    run_list: apt::default
-  - name: fedora-22
+  - name: debian-7.11
+  - name: debian-8.5
+  - name: fedora-24
     run_list: yum::dnf_yum_compat
-  - name: fedora-23
-    run_list: yum::dnf_yum_compat
+  - name: opensuse-13.2
+  - name: opensuse-leap-42.1
   - name: ubuntu-12.04
   - name: ubuntu-14.04
+  - name: ubuntu-16.04
 
 suites:
   #
@@ -42,7 +41,7 @@ suites:
        client_version: '5.1'
        provider: 'mysql'
     includes: [
-      'centos-6.7',
+      'centos-6.8',
     ]
 
   - name: client55-mysql
@@ -53,8 +52,8 @@ suites:
        client_version: '5.5'
        provider: 'mysql'
     includes: [
-      'centos-6.7',
-      'debian-7.9',
+      'centos-6.8',
+      'debian-7.11',
       'ubuntu-12.04',
       'ubuntu-14.04'
     ]
@@ -68,7 +67,7 @@ suites:
        provider: 'mysql'
     includes: [
       'centos-5.11',
-      'centos-6.7',
+      'centos-6.8',
       'centos-7.2',
       'ubuntu-14.04'
     ]
@@ -82,7 +81,7 @@ suites:
        provider: 'mysql'
     includes: [
       'centos-5.11',
-      'centos-6.7',
+      'centos-6.8',
       'centos-7.2'
     ]
 
@@ -97,7 +96,6 @@ suites:
        install:
         version: '5.5'
     includes: [
-       'fedora-23',
-       'fedora-22',
+       'fedora-24',
       'ubuntu-14.04'
     ]

@@ -1,30 +1,21 @@
-Mysql2 Chef Gem Installer Cookbook
-==================================
+# Mysql2 Chef Gem Installer Cookbook
 
-[![Build Status](https://travis-ci.org/sinfomicien/mysql2_chef_gem.svg)](https://travis-ci.org/sinfomicien/mysql2_chef_gem)
-[![Cookbook Version](http://img.shields.io/cookbook/v/mysql2_chef_gem.svg)](https://supermarket.chef.io/cookbooks/mysql2_chef_gem)
+[![Build Status](https://travis-ci.org/sinfomicien/mysql2_chef_gem.svg)](https://travis-ci.org/sinfomicien/mysql2_chef_gem) [![Cookbook Version](http://img.shields.io/cookbook/v/mysql2_chef_gem.svg)](https://supermarket.chef.io/cookbooks/mysql2_chef_gem)
 
-mysql2_chef_gem is a library cookbook that provides an LWRP for use
-in recipes. It provides a wrapper around `chef_gem` called
-`mysql2_chef_gem` that eases the installation process, collecting the
-prerequisites and side-stepping the compilation phase arms race.
+mysql2_chef_gem is a library cookbook that provides an LWRP for use in recipes. It provides a wrapper around `chef_gem` called `mysql2_chef_gem` that eases the installation process, collecting the prerequisites and side-stepping the compilation phase arms race.
 
-Scope
------
-This cookbook is concerned with the installation of the `mysql2`
-Rubygem into Chef's gem path. Installation into other Ruby
-environments, or installation of related gems such as `mysql` are
-outside the scope of this cookbook.
+## Scope
 
-Requirements
-------------
-* Chef 11 or higher
-* Ruby 1.9 (preferably from the Chef full-stack installer)
+This cookbook is concerned with the installation of the `mysql2` Rubygem into Chef's gem path. Installation into other Ruby environments, or installation of related gems such as `mysql` are outside the scope of this cookbook.
 
-Platform Support
-----------------
-The following platforms have been tested with Test Kitchen and are
-known to work.
+## Requirements
+
+- Chef 11 or higher
+- Ruby 1.9 (preferably from the Chef full-stack installer)
+
+## Platform Support
+
+The following platforms have been tested with Test Kitchen and are known to work.
 
 ```
 |---------------------------------------+-----+-----+-----+-----+-----|
@@ -52,9 +43,10 @@ known to work.
 |---------------------------------------+-----+-----+-----+-----+-----|
 ```
 
-Usage
------
+## Usage
+
 Place a dependency on the mysql cookbook in your cookbook's metadata.rb
+
 ```ruby
 depends 'mysql2_chef_gem', '~> 1.0'
 ```
@@ -67,34 +59,34 @@ mysql2_chef_gem 'default' do
 end
 ```
 
-Resources Overview
-------------------
+## Resources Overview
+
 ### mysql2_chef_gem
 
-The `mysql2_chef_gem` resource the build dependencies and installation
-of the `mysql2` rubygem into Chef's Ruby environment
+The `mysql2_chef_gem` resource the build dependencies and installation of the `mysql2` rubygem into Chef's Ruby environment
 
 #### Example
+
 ```ruby
 mysql2_chef_gem 'default' do
-  gem_version '0.3.17'
+  gem_version '0.4.5'
   action :install
 end
 ```
+
 #### Parameters
-- `gem_version` - The version of the `mysql` Rubygem to install into
-  the Chef environment. Defaults to '0.3.17'
-  connector libraries
-- `client_version` - The version of the mysql client libraries to
-  install and link against
+
+- `gem_version` - The version of the `mysql` Rubygem to install into the Chef environment. Defaults to '0.3.17' connector libraries
+- `client_version` - The version of the mysql client libraries to install and link against
 
 #### Actions
+
 - `:install` - Build and install the gem into the Chef environment
 - `:remove` - Delete the gem from the Chef environment
 
 #### Providers
-Chef selects a default provider based on platform and version,
-but you can specify one if your platform support it.
+
+Chef selects a default provider based on platform and version, but you can specify one if your platform support it.
 
 ```ruby
 mysql2_chef_gem 'default' do
@@ -103,11 +95,10 @@ mysql2_chef_gem 'default' do
 end
 ```
 
+## License & Authors
 
-License & Authors
------------------
-- Author:: Sean OMeara (<someara@chef.io>)
-- Author:: Nicolas Blanc(<sinfomicien@gmail.com>)
+- Author:: Sean OMeara ([someara@sean.io](mailto:someara@sean.io))
+- Author:: Nicolas Blanc([sinfomicien@gmail.com](mailto:sinfomicien@gmail.com))
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
