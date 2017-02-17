@@ -89,7 +89,7 @@ suites:
       'ubuntu-14.04'
     ]
 
-  - name: client57-mysql
+  - name: client57-mariadb
     run_list:
     - recipe[mysql2_chef_gem_test::default]
     attributes:
