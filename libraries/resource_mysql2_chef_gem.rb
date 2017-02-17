@@ -9,7 +9,6 @@ class Chef
 
       attribute :mysql2_chef_gem_name, kind_of: String, name_attribute: true, required: true
       attribute :gem_version, kind_of: String, default: '0.3.17'
-      attribute :client_version, kind_of: String, default: nil
-    end
+      attribute :client_version, kind_of: String, [ String, nil ], default: nil
   end
 end
