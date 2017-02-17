@@ -6,14 +6,8 @@ description 'Provides the mysql2_chef_gem resource'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '1.1.0'
 
-supports 'amazon'
-supports 'redhat'
-supports 'centos'
-supports 'scientific'
-supports 'fedora'
 supports 'debian'
 supports 'ubuntu'
-supports 'oracle'
 
 depends 'build-essential'
 depends 'mysql', '~> 8.2.0'
