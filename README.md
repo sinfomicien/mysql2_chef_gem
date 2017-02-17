@@ -77,13 +77,13 @@ of the `mysql2` rubygem into Chef's Ruby environment
 #### Example
 ```ruby
 mysql2_chef_gem 'default' do
-  gem_version '0.3.17'
+  gem_version '0.4.5'
   action :install
 end
 ```
 #### Parameters
 - `gem_version` - The version of the `mysql` Rubygem to install into
-  the Chef environment. Defaults to '0.3.17'
+  the Chef environment. Defaults to '0.4.5'
   connector libraries
 - `client_version` - The version of the mysql client libraries to
   install and link against
