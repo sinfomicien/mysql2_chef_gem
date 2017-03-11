@@ -14,7 +14,7 @@ class Chef
 
           # As a resource: can pass version from calling recipe
           mysql_client 'default' do
-            version new_resource.client_version
+            version new_resource.package_version
             action :create
           end
 

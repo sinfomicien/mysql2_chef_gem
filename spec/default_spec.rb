@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'mysql2_chef_gem_test::default' do
   let(:chef_run) do
     ChefSpec::ServerRunner.new do |node|
-      node.set['mysql2_chef_gem']['resource_name'] = 'default'
+      node.default['mysql2_chef_gem']['resource_name'] = 'default'
     end.converge('mysql2_chef_gem_test::default')
   end
 

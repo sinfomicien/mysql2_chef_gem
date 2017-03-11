@@ -1,23 +1,45 @@
-driver:
-  name: vagrant
+settings:
+  parallel: true
 
-provisioner:
-  name: chef_zero
+driver:
+  name: docker
+  # privileged is required otherwise the container doesn't boot right
+  privileged: true
+  use_sudo: false
 
 platforms:
-  - name: centos-5.11
-  - name: centos-6.7
-  - name: centos-7.2
-  - name: debian-7.9
-    run_list: apt::default
-  - name: debian-8.3
-    run_list: apt::default
-  - name: fedora-22
-    run_list: yum::dnf_yum_compat
-  - name: fedora-23
-    run_list: yum::dnf_yum_compat
-  - name: ubuntu-12.04
-  - name: ubuntu-14.04
+- name: centos-6
+  driver:
+    image: centos:6
+    platform: rhel
+    run_command: /sbin/init
+    provision_command:
+      - /usr/bin/yum install -y initscripts net-tools wget
+- name: centos-7
+  driver:
+    image: centos:7
+    platform: rhel
+    run_command: /usr/lib/systemd/systemd
+    provision_command:
+      - /bin/yum install -y initscripts net-tools wget
+- name: ubuntu-12.04
+  driver:
+    image: ubuntu-upstart:12.04
+    platform: ubuntu
+    disable_upstart: false
+    run_command: /sbin/init
+    provision_command:
+      - /usr/bin/apt-get update
+      - /usr/bin/apt-get install apt-transport-https net-tools -y
+- name: ubuntu-14.04
+  driver:
+    image: ubuntu-upstart:14.04
+    platform: ubuntu
+    disable_upstart: false
+    run_command: /sbin/init
+    provision_command:
+      - /usr/bin/apt-get update
+      - /usr/bin/apt-get install apt-transport-https net-tools -y
 
 suites:
   #
@@ -28,10 +50,10 @@ suites:
     - recipe[mysql2_chef_gem_test::default]
     attributes:
       mysql2_chef_gem:
-       client_version: '5.0'
+       package_version: '5.0'
        provider: 'mysql'
     includes: [
-      'centos-5.11'
+      'centos-5'
     ]
 
   - name: client51-mysql
@@ -39,10 +61,10 @@ suites:
     - recipe[mysql2_chef_gem_test::default]
     attributes:
       mysql2_chef_gem:
-       client_version: '5.1'
+       package_version: '5.1'
        provider: 'mysql'
     includes: [
-      'centos-6.7',
+      'centos-6',
     ]
 
   - name: client55-mysql
@@ -50,11 +72,9 @@ suites:
     - recipe[mysql2_chef_gem_test::default]
     attributes:
       mysql2_chef_gem:
-       client_version: '5.5'
+       package_version: '5.5'
        provider: 'mysql'
     includes: [
-      'centos-6.7',
-      'debian-7.9',
       'ubuntu-12.04',
       'ubuntu-14.04'
     ]
@@ -64,26 +84,23 @@ suites:
     - recipe[mysql2_chef_gem_test::default]
     attributes:
       mysql2_chef_gem:
-       client_version: '5.6'
+       package_version: '5.6'
        provider: 'mysql'
     includes: [
-      'centos-5.11',
-      'centos-6.7',
-      'centos-7.2',
       'ubuntu-14.04'
     ]
 
-  - name: client57-mysql
+  - name: client57-mariadb
     run_list:
     - recipe[mysql2_chef_gem_test::default]
     attributes:
       mysql2_chef_gem:
-       client_version: '5.7'
-       provider: 'mysql'
+       provider: 'mariadb'
+      mariadb:
+        install:
+          version: '5.5.52'
     includes: [
-      'centos-5.11',
-      'centos-6.7',
-      'centos-7.2'
+      'centos-7'
     ]
 
 ## MariaDB
@@ -97,7 +114,5 @@ suites:
        install:
         version: '5.5'
     includes: [
-       'fedora-23',
-       'fedora-22',
       'ubuntu-14.04'
     ]
