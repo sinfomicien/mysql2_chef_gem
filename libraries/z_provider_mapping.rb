@@ -1,17 +1,19 @@
 #########
 # mysql2_chef_gem
 #########
-Chef::Platform.set platform: :amazon, resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :centos, version: '< 7.0', resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :centos, version: '>= 7.0', resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :debian, resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :fedora, version: '< 19', resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :fedora, version: '>= 19', resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :omnios, resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :redhat, version: '< 7.0', resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :redhat, version: '>= 7.0', resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :scientific, version: '< 7.0', resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :scientific, version: '>= 7.0', resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :smartos, resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :suse, resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
-Chef::Platform.set platform: :ubuntu, resource: :mysql2_chef_gem, provider: Chef::Provider::Mysql2ChefGem::Mysql
+class Chef::Provider::Mysql2ChefGem::Mysql
+  provides :mysql2_chef_gem, platform: 'amazon'
+  provides :mysql2_chef_gem, platform: 'centos', platform_version: '< 7.0'
+  provides :mysql2_chef_gem, platform: 'centos', platform_version: '>= 7.0'
+  provides :mysql2_chef_gem, platform: 'debian'
+  provides :mysql2_chef_gem, platform: 'fedora', platform_version: '< 19'
+  provides :mysql2_chef_gem, platform: 'fedora', platform_version: '>= 19'
+  provides :mysql2_chef_gem, platform: 'omnios'
+  provides :mysql2_chef_gem, platform: 'redhat', platform_version: '< 6.0'
+  provides :mysql2_chef_gem, platform: 'redhat', platform_version: '>= 7.0'
+  provides :mysql2_chef_gem, platform: 'scientific', platform_version: '< 7.0'
+  provides :mysql2_chef_gem, platform: 'scientific', platform_version: '>= 7.0'
+  provides :mysql2_chef_gem, platform: 'smartos'
+  provides :mysql2_chef_gem, platform: 'suse'
+  provides :mysql2_chef_gem, platform: 'ubuntu'
+end
