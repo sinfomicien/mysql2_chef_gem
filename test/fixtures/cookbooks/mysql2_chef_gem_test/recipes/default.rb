@@ -1,4 +1,4 @@
-# comments!
+apt_update 'update'
 
 mysql2_chef_gem 'default' do
   package_version node['mysql2_chef_gem']['package_version'] if node['mysql2_chef_gem']
