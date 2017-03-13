@@ -25,9 +25,9 @@ platforms:
     driver:
       box: bento/debian-8.6
 
-  - name: fedora-25
+  - name: fedora-24
     driver:
-      box: bento/fedora-25
+      box: bento/fedora-24
 
   - name: opensuse-leap
     driver:
@@ -64,6 +64,22 @@ suites:
        package_version: '5.5'
        provider: 'mysql'
     includes: [
+      'ubuntu-14.04',
+      'debian-7',
+      'debian-8'
+     ]
+
+  - name: client56-mysql
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+       package_version: '5.6'
+       provider: 'mysql'
+    includes: [
+      'centos-6',
+      'centos-7',
+      'fedora-24',
       'ubuntu-14.04'
      ]
 
@@ -75,7 +91,10 @@ suites:
        package_version: '5.6'
        provider: 'mysql'
     includes: [
-      'ubuntu-14.04'
+      'centos-6',
+      'centos-7',
+      'fedora-24',
+      'ubuntu-16.04'
      ]
 
   - name: client57-mariadb
