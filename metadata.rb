@@ -10,8 +10,9 @@ supports 'debian'
 supports 'ubuntu'
 
 depends 'build-essential'
-depends 'mysql', '~> 8.2.0'
+depends 'mysql', '>= 8.2.0'
 depends 'mariadb'
 
-source_url 'https://github.com/sinfomicien/mysql2_chef_gem' if respond_to?(:source_url)
-issues_url 'https://github.com/sinfomicien/mysql2_chef_gem/issues' if respond_to?(:issues_url)
+chef_version '>= 12.5' if respond_to?(:chef_version)
+source_url 'https://github.com/sinfomicien/mysql2_chef_gem'
+issues_url 'https://github.com/sinfomicien/mysql2_chef_gem/issues'
