@@ -30,13 +30,11 @@ The following platforms have been tested with Test Kitchen and are known to work
 |---------------------------------------+-----+-----+-----+-----+-----|
 | Mysql2ChefGem::Mysql / debian-7       |     |     | X   |     |     |
 |---------------------------------------+-----+-----+-----+-----+-----|
-| Mysql2ChefGem::Mysql / ubuntu-10.04   |     | X   |     |     |     |
-|---------------------------------------+-----+-----+-----+-----+-----|
 | Mysql2ChefGem::Mysql / ubuntu-12.04   |     |     | X   |     |     |
 |---------------------------------------+-----+-----+-----+-----+-----|
 | Mysql2ChefGem::Mysql / ubuntu-14.04   |     |     | X   | X   |     |
 |---------------------------------------+-----+-----+-----+-----+-----|
-| Mysql2ChefGem::Mariadb / fedora-20    |     |     | X   |     |     |
+| Mysql2ChefGem::Mariadb / fedora       |     |     | X   |     |     |
 |---------------------------------------+-----+-----+-----+-----+-----|
 | Mysql2ChefGem::Mariadb / ubuntu-14.04 |     |     | X   |     |     |
 |---------------------------------------+-----+-----+-----+-----+-----|
@@ -47,7 +45,7 @@ The following platforms have been tested with Test Kitchen and are known to work
 Place a dependency on the mysql cookbook in your cookbook's metadata.rb
 
 ```ruby
-depends 'mysql2_chef_gem', '~> 1.0'
+depends 'mysql2_chef_gem'
 ```
 
 Then, in a recipe:
@@ -96,7 +94,7 @@ end
 
 ## License & Authors
 
-- Author:: Sean OMeara ([someara@chef.io](mailto:someara@chef.io))
+- Author:: Sean OMeara ([someara@sean.io](mailto:someara@sean.io))
 - Author:: Nicolas Blanc([sinfomicien@gmail.com](mailto:sinfomicien@gmail.com))
 
 ```
