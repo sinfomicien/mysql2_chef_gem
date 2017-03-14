@@ -10,7 +10,7 @@ version '1.1.0'
   supports platorm
 end
 
-depends 'build-essential'
+depends 'build-essential', '>= 2.4.0'
 depends 'mysql', '>= 8.2.0'
 depends 'mariadb'
 
