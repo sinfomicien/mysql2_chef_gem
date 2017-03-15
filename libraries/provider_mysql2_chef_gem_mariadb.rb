@@ -9,14 +9,10 @@ class Chef
         end
 
         action :install do
-          recipe_eval do
-            run_context.include_recipe 'build-essential::default'
-          end
+          include_recipe 'build-essential::default'
 
           # As a recipe: must rely on global node attributes
-          recipe_eval do
-            run_context.include_recipe 'mariadb::client'
-          end
+          include_recipe 'mariadb::client'
 
           gem_package 'mysql2' do
             gem_binary RbConfig::CONFIG['bindir'] + '/gem'
