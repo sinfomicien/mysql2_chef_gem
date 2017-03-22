@@ -6,10 +6,11 @@ description 'Provides the mysql2_chef_gem resource'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '1.1.0'
 
-supports 'debian'
-supports 'ubuntu'
+%w(centos redhat scientific oracle fedora debian ubuntu).each do |platorm|
+  supports platorm
+end
 
-depends 'build-essential'
+depends 'build-essential', '>= 2.4.0'
 depends 'mysql', '>= 8.2.0'
 depends 'mariadb'
 

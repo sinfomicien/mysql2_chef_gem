@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/sinfomicien/mysql2_chef_gem.svg)](https://travis-ci.org/sinfomicien/mysql2_chef_gem) [![Cookbook Version](http://img.shields.io/cookbook/v/mysql2_chef_gem.svg)](https://supermarket.chef.io/cookbooks/mysql2_chef_gem)
 
-mysql2_chef_gem is a library cookbook that provides an LWRP for use in recipes. It provides a wrapper around `chef_gem` called `mysql2_chef_gem` that eases the installation process, collecting the prerequisites and side-stepping the compilation phase arms race.
+mysql2_chef_gem is a library cookbook that provides a resource for installing the mysql2 gem against either mysql or mariadb depending on usage.
 
 ## Scope
 
@@ -29,8 +29,6 @@ The following platforms have been tested with Test Kitchen and are known to work
 | Mysql2ChefGem::Mysql / fedora         |     |     | X   | X   | X   |
 |---------------------------------------+-----+-----+-----+-----+-----|
 | Mysql2ChefGem::Mysql / debian-7       |     |     | X   |     |     |
-|---------------------------------------+-----+-----+-----+-----+-----|
-| Mysql2ChefGem::Mysql / ubuntu-12.04   |     |     | X   |     |     |
 |---------------------------------------+-----+-----+-----+-----+-----|
 | Mysql2ChefGem::Mysql / ubuntu-14.04   |     |     | X   | X   |     |
 |---------------------------------------+-----+-----+-----+-----+-----|
