@@ -54,6 +54,10 @@ mysql2_chef_gem 'default' do
 end
 ```
 
+### 2.0 Compatibility
+
+In order to ensure compatibility with Chef 13, the 2.0 release of this cookbook changed the method used to specify installation against mariadb. Instead of specifying the underlying provider, you instead reference the mariadb specific resource. See the example below for the new syntax.
+
 ## Resources Overview
 
 ### mysql2_chef_gem
