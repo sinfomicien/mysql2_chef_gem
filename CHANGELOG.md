@@ -1,5 +1,9 @@
 # mysql2_chef_gem CHANGELOG
 
+## 2.0.1 (2017-03-28)
+
+- Include usage examples for installing on a mariadb server and included a note in the readme regarding the 2.0 changes.
+
 ## 2.0.0 (2017-03-28)
 
 - Converted the previously HWRP resources/providers to a custom resource. This changes the behavior of choosing to install on mysql or mariadb in a breaking way. Instead of specifying the providers you need to call the resources directly. Specifying mysql2_chef_gem will default to mysql, but using mariadb will require using the mysql2_chef_gem_mariadb resource directly.
