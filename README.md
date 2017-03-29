@@ -58,7 +58,7 @@ end
 
 ### mysql2_chef_gem
 
-The `mysql2_chef_gem` resource the build dependencies and installation of the `mysql2` rubygem into Chef's Ruby environment
+The `mysql2_chef_gem` resource installs mysql client development dependencies and installs the `mysql2` rubygem into Chef's Ruby environment.
 
 #### Example
 
@@ -69,7 +69,7 @@ mysql2_chef_gem 'default' do
 end
 ```
 
-#### Parameters
+#### Properties
 
 - `gem_version` - The version of the `mysql` Rubygem to install into the Chef environment. Defaults to '0.4.5' connector libraries
 - `package_version` - The version of the mysql client libraries to install and link against
@@ -79,13 +79,12 @@ end
 - `:install` - Build and install the gem into the Chef environment
 - `:remove` - Delete the gem from the Chef environment
 
-#### Providers
+### mysql2_chef_gem_mariadb
 
-Chef selects a default provider based on platform and version, but you can specify one if your platform support it.
+To install the mysql2 gem against an installation of mariadb reference the `mysql2_chef_gem_mariadb` resource directly. This resource includes all the same properties of the standard `mysql2_chef_gem` resource.
 
 ```ruby
-mysql2_chef_gem 'default' do
-  provider Chef::Provider::Mysql2ChefGem::Mariadb
+mysql2_chef_gem_mariadb 'default' do
   action :install
 end
 ```
@@ -93,6 +92,7 @@ end
 ## License & Authors
 
 - Author:: Sean OMeara ([someara@sean.io](mailto:someara@sean.io))
+- Author:: Tim Smith ([tsmith@chef.io](mailto:tsmith@chef.io))
 - Author:: Nicolas Blanc([sinfomicien@gmail.com](mailto:sinfomicien@gmail.com))
 
 ```
