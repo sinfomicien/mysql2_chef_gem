@@ -14,6 +14,6 @@ depends 'build-essential', '>= 2.4.0'
 depends 'mysql', '>= 8.2.0'
 depends 'mariadb'
 
-chef_version '>= 12.5' if respond_to?(:chef_version)
+chef_version '>= 12.7' if respond_to?(:chef_version)
 source_url 'https://github.com/sinfomicien/mysql2_chef_gem'
 issues_url 'https://github.com/sinfomicien/mysql2_chef_gem/issues'

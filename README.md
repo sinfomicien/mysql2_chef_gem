@@ -10,7 +10,7 @@ This cookbook is concerned with the installation of the `mysql2` Rubygem into Ch
 
 ## Requirements
 
-- Chef 12.5+
+- Chef 12.7+
 
 ## Platform Support
 
