@@ -1,5 +1,5 @@
-property :mysql2_chef_gem_name, String, name_attribute: true, required: true
-property :gem_version, String, default: '0.4.5'
+property :mysql2_chef_gem_name, String, name_property: true, required: true
+property :gem_version, String, default: '0.4.9'
 property :package_version, String
 
 provides :mysql2_chef_gem_mariadb
