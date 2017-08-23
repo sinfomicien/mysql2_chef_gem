@@ -23,15 +23,15 @@ platforms:
 
   - name: debian-8
     driver:
-      box: bento/debian-8.6
+      box: bento/debian-8.8
 
-  - name: fedora-24
+  - name: fedora-25
     driver:
-      box: bento/fedora-24
+      box: bento/fedora-25
 
   - name: opensuse-leap
     driver:
-      box: bento/opensuse-leap-42.1
+      box: bento/opensuse-leap-42.2
 
   - name: ubuntu-14.04
     driver:
@@ -79,7 +79,7 @@ suites:
     includes: [
       'centos-6',
       'centos-7',
-      'fedora-24',
+      'fedora-25',
       'ubuntu-14.04'
      ]
 
@@ -93,7 +93,7 @@ suites:
     includes: [
       'centos-6',
       'centos-7',
-      'fedora-24',
+      'fedora-25',
       'ubuntu-16.04'
      ]
 
