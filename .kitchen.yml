@@ -66,7 +66,9 @@ suites:
     includes: [
       'ubuntu-14.04',
       'debian-7',
-      'debian-8'
+      'debian-8',
+      'centos-6',
+      'centos-7'
      ]
 
   - name: client56-mysql
