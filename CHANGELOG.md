@@ -1,5 +1,15 @@
 # mysql2_chef_gem CHANGELOG
 
+## 2.1.0 (2017-08-23)
+
+- This cookbook now requires Chef 12.7 as 12.5/12.6 have issues with action_class and weren't actually functional in the previous releases
+- The resource now installs the mysql2 0.4.9 gem
+- Enabled FC016 testing once again
+- Switch the kitchen-dokken config to use dokken images
+- Update platforms we test in Test Kitchen and expand suites
+- Updates the supported and tested platforms in the readme
+- Updated the metadata to use a SPDX compliant license string
+
 ## 2.0.1 (2017-03-28)
 
 - Include usage examples for installing on a mariadb server and included a note in the readme regarding the 2.0 changes.
