@@ -99,6 +99,18 @@ suites:
       'ubuntu-16.04'
      ]
 
+  - name: client57-mysql
+    run_list:
+    - recipe[mysql2_chef_gem_test::default]
+    attributes:
+      mysql2_chef_gem:
+       package_version: '5.7'
+       provider: 'mysql'
+    includes: [
+      'centos-6',
+      'centos-7'
+     ]
+
   - name: client57-mariadb
     run_list:
     - recipe[mysql2_chef_gem_test::default]
