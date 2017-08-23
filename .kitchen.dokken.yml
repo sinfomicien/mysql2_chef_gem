@@ -64,6 +64,7 @@ platforms:
     pid_one_command: /usr/lib/systemd/systemd
     intermediate_instructions:
       - RUN dnf -y install yum which systemd-sysv initscripts wget net-tools
+
 - name: ubuntu-14.04
   driver:
     privileged: true
