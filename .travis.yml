@@ -19,14 +19,16 @@ services: docker
 
 env:
   matrix:
+
   - INSTANCE=client55-mysql-centos-6
   - INSTANCE=client55-mysql-centos-7
+  - INSTANCE=client55-mysql-ubuntu-1404
   - INSTANCE=client56-mysql-centos-6
   - INSTANCE=client56-mysql-centos-7
+  - INSTANCE=client56-mysql-ubuntu-1404
   - INSTANCE=client57-mysql-centos-6
   - INSTANCE=client57-mysql-centos-7
-  - INSTANCE=client55-mysql-ubuntu-1404
-  - INSTANCE=client56-mysql-ubuntu-1404
+  - INSTANCE=client57-mysql-ubuntu-1604
   - INSTANCE=client55-mariadb-ubuntu-1404
 
 # Ensure we make ChefDK's Ruby the default
